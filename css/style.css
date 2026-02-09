@@ -1,10 +1,7 @@
 *{margin:0;padding:0;box-sizing:border-box;font-family:Pretendard,sans-serif}
-body{background:#0e0e0e;color:#eaeaea}
+body{background:#0e0e0e;color:#eee}
 
-header{
-  position:fixed;top:0;width:100%;
-  padding:15px;background:#111;z-index:100
-}
+header{position:fixed;top:0;width:100%;background:#111;padding:15px;z-index:100}
 .menu-btn{font-size:26px;cursor:pointer}
 nav{display:none;flex-direction:column;margin-top:10px}
 nav a{padding:10px;cursor:pointer;transition:.3s}
@@ -13,35 +10,51 @@ nav a:hover{background:#222}
 main{padding-top:90px;min-height:100vh;animation:fade .4s}
 
 .center{
-  display:flex;flex-direction:column;
-  align-items:center;justify-content:center;
-  text-align:center
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
 }
 
-.list,.card{
-  background:#161616;border-radius:14px;
-  padding:20px;margin:20px;
-  display:flex;justify-content:space-between;
-  gap:20px;transition:.3s
+.card{
+  background:#161616;
+  border-radius:14px;
+  padding:20px;
+  margin:20px auto;
+  max-width:900px;
+  display:flex;
+  align-items:center;
+  gap:20px;
+  transition:.3s;
 }
-.list:hover,.card:hover{transform:scale(1.03)}
+.card:hover{transform:scale(1.03)}
 
-.card img{
-  width:180px;height:120px;
-  object-fit:cover;border-radius:12px
+.card img{width:180px;border-radius:12px}
+
+.card-info{flex:1}
+
+button,input,textarea,select{
+  width:100%;
+  padding:12px;
+  margin-top:10px;
+  background:#1f1f1f;
+  border:none;
+  border-radius:8px;
+  color:#fff;
 }
 
-input,textarea,select,button{
-  width:100%;padding:12px;margin-top:10px;
-  background:#1f1f1f;border:none;
-  border-radius:8px;color:#fff
-}
 button{background:#333;cursor:pointer}
-
-.tag{font-size:12px;opacity:.8}
 
 @keyframes fade{from{opacity:0}to{opacity:1}}
 
 @media(max-width:768px){
+  .card{flex-direction:column;text-align:center}
+  .card img{width:100%}
+}
+
+
+@media(max-width:768px){
   .list,.card{flex-direction:column}
 }
+
